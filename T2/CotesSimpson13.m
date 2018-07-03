@@ -34,7 +34,7 @@ while(err>eps)
     In=(delta/3)*xn*coeff;
     err=(abs(In-I)/abs(In));
     n=n+1;
-    disp(In);
+    %disp(In);
     I=In;
 end
 value=I;

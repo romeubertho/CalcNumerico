@@ -13,7 +13,7 @@ function out = metodo_newton(f,x0, eps)
         xn = x_n_mais_1;
         it=it+1;
     end
-    fprintf('Iterações = %d',it);
+    fprintf('Iterações = %d\n',it);
     out = xn;
     
 end
