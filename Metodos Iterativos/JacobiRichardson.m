@@ -24,6 +24,8 @@ U = triu(A,1);
 B=(-D\(L+U));
 % Calcula g que é igual a x0
 g=D\b;
+Ls=tril(B,-1)
+Us=triu(B,1)
 
 %Verifica o critério de convergência se a Matriz é estritamente
 %diagonalmente dominante
@@ -54,7 +56,7 @@ while(Conv(1:cCol)>eps)
     %Verifica a quantidade de colunas da matriz Xi
     [~,xCol]=size(Xi);
     %Calcula o próximo X(i) e concatena em Xi
-    Xi=[Xi (B*Xi(:,xCol))+Xi(:,1)];
+    Xi=[Xi ((Ls+Us)*Xi(:,xCol))+g];
     %Verifica a quantidade de colunas da matriz Xi
     [~,xCol]=size(Xi);
     %Calcula a convergência entre X(k) e X(k-1) e concatena na matriz Conv
